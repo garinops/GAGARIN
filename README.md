@@ -53,7 +53,7 @@ Group=ubuntu
 
 WorkingDirectory=/home/ubuntu/server.gagarin-uvicorn/
 
-ExecStart=/home/ubuntu/server.gagarin-uvicorn/venv-gagarin-uvicorn/bin/uvicorn main:gagarin --host 0.0.0.0 --port 8080 --root-path /data
+ExecStart=/home/ubuntu/server.gagarin-uvicorn/venv-gagarin-uvicorn/bin/uvicorn main:gagarin --host 0.0.0.0 --port 8080 --root-path /gagarin
 
 
 [Install]

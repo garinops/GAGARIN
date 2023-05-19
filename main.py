@@ -6,11 +6,11 @@ from Exceptions.CustomHTTPException import ToosHTTPExceptions
 from routers import client, headers
 
 tools = FastAPI(
-    title="TOOLS",
+    title="GAGARIN",
     version="0.1.0",
     contact={
         "name": "GARIN ASSET LLC",
-        "url": "https://developers.garinasset.com",
+        "url": "https://developers.garinasset.com/tools/",
         "email": "root@garinasset.com",
     },
     openapi_url="/v1/openapi.json",
@@ -26,9 +26,6 @@ async def http_exception_handler(request: Request, exc):
 
 origins = [
     "https://developers.garinasset.com",
-    "http://127.0.0.1:5501",
-    "http://172.16.1.5:5501",
-
 ]
 
 tools.add_middleware(
@@ -43,7 +40,7 @@ tools.add_middleware(
 
 @tools.get("/v1")
 async def root():
-    return {"Hello Tools!"}
+    return {"Hello Gagarin!"}
 
 
 tools.include_router(client.router, prefix='/v1/request', tags=["客户端"])
