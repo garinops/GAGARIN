@@ -12,7 +12,7 @@ pip freeze > requirements.txt
 ```shell
 git clone git@github.com:garinops/GAGARIN.git
 
-cp gagarin server.gagarin-uvicorn -r 
+mv GAGARIN server.gagarin-uvicorn
 ```
 - 创建虚拟环境
 ```shell

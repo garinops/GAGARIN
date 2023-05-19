@@ -2,15 +2,15 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from Exceptions.CustomHTTPException import ToosHTTPExceptions
+from Exceptions.CustomHTTPException import GagarinHTTPExceptions
 from routers import client, headers
 
-tools = FastAPI(
+gagarin = FastAPI(
     title="GAGARIN",
     version="0.1.0",
     contact={
         "name": "GARIN ASSET LLC",
-        "url": "https://developers.garinasset.com/tools/",
+        "url": "https://garinasset.com",
         "email": "root@garinasset.com",
     },
     openapi_url="/v1/openapi.json",
@@ -19,16 +19,16 @@ tools = FastAPI(
 )
 
 
-@tools.exception_handler(StarletteHTTPException)
+@gagarin.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exc):
-    return ToosHTTPExceptions.toolsHTTPExceptionType(exc.status_code, exc.detail, exc.headers)
+    return GagarinHTTPExceptions.gagarinHTTPExceptionType(exc.status_code, exc.detail, exc.headers)
 
 
 origins = [
     "https://developers.garinasset.com",
 ]
 
-tools.add_middleware(
+gagarin.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     # 指示跨域请求支持 cookies。默认是 False。
@@ -38,10 +38,10 @@ tools.add_middleware(
 )
 
 
-@tools.get("/v1")
+@gagarin.get("/v1")
 async def root():
     return {"Hello Gagarin!"}
 
 
-tools.include_router(client.router, prefix='/v1/request', tags=["客户端"])
-tools.include_router(headers.router, prefix='/v1/request', tags=["HTTP头部"])
+gagarin.include_router(client.router, prefix='/v1/request', tags=["客户端"])
+gagarin.include_router(headers.router, prefix='/v1/request', tags=["HTTP头部"])

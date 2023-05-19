@@ -4,9 +4,9 @@ from fastapi.encoders import jsonable_encoder
 from databases import schemas
 
 
-class ToosHTTPExceptions:
+class GagarinHTTPExceptions:
     @staticmethod
-    def toolsHTTPExceptionType(status_code: int, detail: str = None, headers: dict = None):
+    def gagarinHTTPExceptionType(status_code: int, detail: str = None, headers: dict = None):
         match status_code, detail:
             # 登录 @ 邮箱或密码不正确
             case 400, 'AuthLoginErrorEmailPasswordIncorrect':
