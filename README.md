@@ -1,4 +1,4 @@
-# gagarin
+# GAGARIN
 ***
 - 封装依赖
 ```shell
@@ -9,7 +9,7 @@ pip freeze > requirements.txt
 ## 一、虚拟环境
 - 下载源代码
 ```shell
-git clone git@github.com:garinops/gagarin.git
+git clone git@github.com:garinops/GAGARIN.git
 
 cp gagarin server.gagarin-uvicorn -r 
 ```
@@ -17,7 +17,7 @@ cp gagarin server.gagarin-uvicorn -r
 ```shell
 cd server.gagarin-uvicorn/
 
-python3.10 -m venv venv-gagarin-uvicorn
+python3.11 -m venv venv-gagarin-uvicorn
 ```
 - 激活虚拟环境
 ```shell
