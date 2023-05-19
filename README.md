@@ -29,6 +29,9 @@ source venv-gagarin-uvicorn/bin/activate
 - 依赖安装
 ```shell
 pip install -r requirements.txt
+
+# 安装uvicorn后端
+pip install uvicorn
 ```
 ***
 ## 三、uvicorn服务配置 
