@@ -1,5 +1,5 @@
 # GAGARIN
-## Api for https://developers.garinasset.com/tools/
+## Api for https://developers.garinasset.com/request/
 ***
 - 封装依赖
 ```shell
